@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "Employees.UITests": {
+      "commandName": "Project"
+    }
+  }
+}

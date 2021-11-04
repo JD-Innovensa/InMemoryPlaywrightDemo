@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{35515885-9DDC-4A3A-8A63-EC5920F10208}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{1E510BCE-7CF0-49CF-AABA-72ADA1F50183}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Employees.Data", "src\Employees.Data\Employees.Data.csproj", "{90632606-FBF5-4B26-A365-6A0525D478CE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Employees.UITests", "test\Employees.UITest\Employees.UITests.csproj", "{7A1115E9-2F54-4F8E-837B-B3DEC384786D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Employees.UI", "src\Employees.UI\Employees.UI.csproj", "{AFC9B7A3-BCBB-4E05-B71E-419C8B8150F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomatedTesting", "test\AutomatedTesting\AutomatedTesting.csproj", "{76177CAC-5EF2-4149-A671-B9301DB5A62C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "devops", "devops", "{B9F11B7B-877D-49CC-9675-ACECBB7D0DEB}"
+	ProjectSection(SolutionItems) = preProject
+		devops\azure-pipeline.yml = devops\azure-pipeline.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90632606-FBF5-4B26-A365-6A0525D478CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90632606-FBF5-4B26-A365-6A0525D478CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90632606-FBF5-4B26-A365-6A0525D478CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90632606-FBF5-4B26-A365-6A0525D478CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A1115E9-2F54-4F8E-837B-B3DEC384786D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A1115E9-2F54-4F8E-837B-B3DEC384786D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A1115E9-2F54-4F8E-837B-B3DEC384786D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A1115E9-2F54-4F8E-837B-B3DEC384786D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFC9B7A3-BCBB-4E05-B71E-419C8B8150F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFC9B7A3-BCBB-4E05-B71E-419C8B8150F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFC9B7A3-BCBB-4E05-B71E-419C8B8150F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFC9B7A3-BCBB-4E05-B71E-419C8B8150F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76177CAC-5EF2-4149-A671-B9301DB5A62C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76177CAC-5EF2-4149-A671-B9301DB5A62C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76177CAC-5EF2-4149-A671-B9301DB5A62C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76177CAC-5EF2-4149-A671-B9301DB5A62C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{90632606-FBF5-4B26-A365-6A0525D478CE} = {35515885-9DDC-4A3A-8A63-EC5920F10208}
+		{7A1115E9-2F54-4F8E-837B-B3DEC384786D} = {1E510BCE-7CF0-49CF-AABA-72ADA1F50183}
+		{AFC9B7A3-BCBB-4E05-B71E-419C8B8150F5} = {35515885-9DDC-4A3A-8A63-EC5920F10208}
+		{76177CAC-5EF2-4149-A671-B9301DB5A62C} = {1E510BCE-7CF0-49CF-AABA-72ADA1F50183}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E270E10E-F95C-4C8E-99B4-E7D233FE2316}
+	EndGlobalSection
+EndGlobal

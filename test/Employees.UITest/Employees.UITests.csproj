@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="6.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="3.1.20" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
+    <PackageReference Include="Microsoft.Playwright" Version="1.16.1" />
+    <PackageReference Include="NUnit" Version="3.13.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
+    <PackageReference Include="coverlet.collector" Version="3.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Employees.Data\Employees.Data.csproj" />
+    <ProjectReference Include="..\..\src\Employees.UI\Employees.UI.csproj" />
+    <ProjectReference Include="..\AutomatedTesting\AutomatedTesting.csproj" />
+  </ItemGroup>
+
+  <Target Name="CopyWWWRoot" AfterTargets="Build">
+    <ItemGroup>
+      <WWWRootFiles Include="$(ProjectDir)..\..\src\Employees.UI\wwwroot\**\*.*" />
+    </ItemGroup>
+
+    <Copy SourceFiles="@(WWWRootFiles)" DestinationFiles="@(WWWRootFiles->'$(TargetDir)\wwwroot\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>  
+</Project>
