@@ -1,0 +1,41 @@
+# Azure Devops pipeline - restore, build and execute tests
+
+name: $(date:yyyyMMdd)$(rev:.r)
+
+resources:
+  repositories:
+  - repository: self
+    type: git
+    ref: refs/heads/main
+    
+jobs:
+- job: Job_1
+  displayName: Agent job 1
+  pool:
+    vmImage: windows-2019
+  steps:
+  - checkout: self
+    fetchDepth: 1
+  - task: DotNetCoreCLI@2
+    displayName: Install Playwright
+    inputs:
+      command: custom
+      custom: tool
+      arguments: update -g Microsoft.Playwright.CLI
+  - task: DotNetCoreCLI@2
+    displayName: Build
+    inputs:
+      projects: '**/*.csproj'
+      arguments: '  --configuration $(BuildConfiguration)'
+  - task: CmdLine@2
+    displayName: Playwright Install browsers
+    inputs:
+      script: |
+        cd $(Build.SourcesDirectory)\InMemoryPlaywrightDemo\test\Employees.UITests
+        playwright install
+  - task: DotNetCoreCLI@2
+    displayName: Test
+    inputs:
+      command: test
+      projects: '**/Employees.UITests.csproj'
+      arguments: ' --configuration $(BuildConfiguration) --collect "Code coverage"'
