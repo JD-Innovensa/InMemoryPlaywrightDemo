@@ -13,11 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Employees.UITests", "test\E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Employees.UI", "src\Employees.UI\Employees.UI.csproj", "{AFC9B7A3-BCBB-4E05-B71E-419C8B8150F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomatedTesting", "test\AutomatedTesting\AutomatedTesting.csproj", "{76177CAC-5EF2-4149-A671-B9301DB5A62C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomatedTesting", "test\AutomatedTesting\AutomatedTesting.csproj", "{76177CAC-5EF2-4149-A671-B9301DB5A62C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "devops", "devops", "{B9F11B7B-877D-49CC-9675-ACECBB7D0DEB}"
 	ProjectSection(SolutionItems) = preProject
-		devops\azure-pipeline.yml = devops\azure-pipeline.yml
+		src\devops\azure-pipeline.yml = src\devops\azure-pipeline.yml
 	EndProjectSection
 EndProject
 Global

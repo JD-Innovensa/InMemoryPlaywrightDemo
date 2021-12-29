@@ -2,12 +2,14 @@
 {
     using System;
     using System.Diagnostics.CodeAnalysis;
+    using System.IO;
     using System.Linq;
     using Microsoft.AspNetCore;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Hosting.Server.Features;
     using Microsoft.AspNetCore.Mvc.Testing;
     using Microsoft.AspNetCore.TestHost;
+    using Microsoft.Extensions.Configuration;
 
     /// <summary>
     /// Web Application Factory for End to End based testing e.g. using Selenium or Playwright.
@@ -45,7 +47,15 @@
 
         protected override TestServer CreateServer(IWebHostBuilder builder)
         {
-            _host = builder.Build();
+            // Load server URL from hosting.json file so that the web server runs on the correct port for testing.
+            var config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("hosting.json", optional: true)
+                .Build();
+
+            _host = builder
+                .UseConfiguration(config)
+                .Build();
 
             _host.Start();
 
@@ -54,7 +64,7 @@
             // There doesn't seem to be a need to return a test server instance.  If so it would be different to what is created previously.
             // Attempting to use the same instance causes errors, creating new instances creates slightly different web servers.
             return null;
-        }
+        } 
 
         protected override IWebHostBuilder CreateWebHostBuilder()
         {

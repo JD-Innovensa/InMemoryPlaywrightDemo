@@ -22,6 +22,12 @@
     <ProjectReference Include="..\AutomatedTesting\AutomatedTesting.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="hosting.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
   <Target Name="CopyWWWRoot" AfterTargets="Build">
     <ItemGroup>
       <WWWRootFiles Include="$(ProjectDir)..\..\src\Employees.UI\wwwroot\**\*.*" />
